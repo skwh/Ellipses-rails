@@ -3,6 +3,11 @@ class EntriesController < ApplicationController
 
   respond_to :html
 
+  def home
+    @entries = Entry.limit(5)
+    respond_with(@entries)
+  end
+
   def index
     @entries = Entry.all
     respond_with(@entries)
@@ -38,7 +43,7 @@ class EntriesController < ApplicationController
 
   private
     def set_entry
-      @entry = Entry.find(params[:id])
+      @entry = Entry.find_by_param(params[:id])
     end
 
     def entry_params

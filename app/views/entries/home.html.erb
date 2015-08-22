@@ -1,6 +1,6 @@
 <% @entries.each do |entry| %>
   <div class="entry">
-    <h2 class="title"><%= link_to entry.title, entry %><span class="author">By <%= entry.author %></span></h2>
+    <h2 class="title"><%= link_to entry.title, entry %><span class="author"><% if user_verified? %><%= link_to "Edit", edit_entry_path(entry) %> | <% end %>By <%= entry.author %></span></h2>
     <div class="body"><%= entry.body %></div>
   </div>
   <hr />

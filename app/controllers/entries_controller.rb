@@ -1,5 +1,7 @@
 class EntriesController < ApplicationController
+  include ApplicationHelper, EntriesHelper
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :begin_verification, only: [:new, :edit, :update, :destroy]
 
   respond_to :html
 
@@ -11,6 +13,9 @@ class EntriesController < ApplicationController
   def index
     @entries = Entry.all
     respond_with(@entries)
+  end
+
+  def login
   end
 
   def show

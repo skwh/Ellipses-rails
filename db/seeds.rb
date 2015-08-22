@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Password.create(:password_digest => "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8")
+
+puts "Created #{Password.all.count} passwords"
+
 10.times {
   obj = Entry.new
   obj.title = "Lorem ipsum dolor sit #{('a'..'z').to_a.shuffle[0,8].join.capitalize}"

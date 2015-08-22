@@ -1,1 +1,7 @@
-<p>Footer</p>
+<p>&copy; <%= DateTime.now.year %> Fairview High School Ellipses Literary Magazine.
+  <% if user_verified? %>
+    Logged in. (You will be logged out when you close your browser)
+  <% else %>
+    <%= link_to "Login", login_path %>
+  <% end %>
+</p>

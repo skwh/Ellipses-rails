@@ -1,3 +1,4 @@
+<% provide(:title, "#{@entry.title}") %>
 <p id="notice"><%= notice %></p>
 <div class="entry">
   <h1 class="title"><%= link_to @entry.title, @entry %><span class="author"><% if user_verified? %><%= link_to "Edit", edit_entry_path(@entry) %> | <% end %>By <%= @entry.author %></span></h1>
